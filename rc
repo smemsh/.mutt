@@ -111,12 +111,12 @@ set ssl_starttls		= yes
 set ssl_use_sslv3		= yes
 set ssl_use_tlsv1		= yes
 set use_ipv6			= no
-set certificate_file		= $my_muttcrypt/certificates
+set certificate_file		= $my_cryptroot/certificates
 set history_file		= $my_muttdata/history
 
 set attribution			= "%F on %{%Y/%m/%d %Z @%H:%M:%S}:"
 set date_format			= "!%a %Y%m%d%H%M%S %Z"
-set display_filter		= "sed -f $my_muttroot/display_filter.sed"
+set display_filter		= "sed -f $my_cryptroot/display_filter.sed"
 set dsn_return			= full
 set mbox_type			= Maildir
 #set query_command		= "mutt_ldap_query '%s'"
@@ -131,7 +131,7 @@ set wrap			= 80 # artificial boundary for text/flowed
 
 # TODO do we need both these lines? any reason to source it?
 #
-set alias_file			= $my_muttcrypt/aliases
+set alias_file			= $my_cryptroot/aliases
 source $alias_file
 
 # index_format done in myvars/hooks/macros
