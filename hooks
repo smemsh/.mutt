@@ -1,0 +1,85 @@
+#
+# scott@smemsh.net
+# http://smemsh.net/src/.mutt/hooks
+# http://spdx.org/licenses/GPL-2.0.html
+#
+##############################################################################
+
+# so we can rebuild any/all hooks from known state
+#
+unhook *
+
+unhook		fcc-hook
+unhook		send-hook
+unhook		reply-hook
+
+set		norecord
+#set		nocopy			# should kill fcc, but doesn't
+set		copy			# UPDATE: still shows fcc field but
+					#         doesn't save
+
+# TODO interactions of this with server-based auto-fcc (gmail)?
+# suspecting it will make duplicate mails, or that server copy
+# is read-only for the user
+#
+fcc-hook	.			$my_sent/ # <-- otherwise won't work
+
+folder-hook	.			set	sort		=threads
+folder-hook	.			set	sort_aux	=date-sent
+
+folder-hook	.			push	\eV
+folder-hook	.			set	nostrict_threads
+folder-hook	saved			set	strict_threads
+
+folder-hook	.			"set index_format = \"$my_index_normal\""
+folder-hook	sent			"set index_format = \"$my_index_sent\""
+folder-hook	$my_maildir/postponed	"set index_format = \"$my_index_sent\""
+
+folder-hook . \
+        "set from	= \"$my_email_personal\";"\
+        "set signature = ~/.mutt/signature.$my_base_personal;"\
+
+folder-hook $my_base_work \
+        "set from	= \"$my_email_work\";"\
+        "set signature	= ~/.mutt/signature.$my_base_work;"\
+
+folder-hook $my_base_private \
+        "set from	= \"$my_email_private\";"\
+        "set signature	= ~/.mutt/signature.$my_base_personal;"\
+
+##############################################################################
+
+# default is to work
+#
+reply-hook	"~A" "\
+set from	= \"$my_email_work\";\
+set signature	= ~/.mutt/signature.$my_base_work;\
+"
+
+# work
+#
+reply-hook	"~t $my_domain_work" "\
+set from	= \"$my_email_work\";\
+set signature	= ~/.mutt/signature.$my_base_work;\
+"
+
+# private
+#
+reply-hook	"~t $my_addr_private" "\
+set from	= \"$my_email_private\";\
+set signature	= ~/.mutt/signature.$my_base_personal;\
+"
+
+# personal
+#
+reply-hook	"~t $my_addr_personal" "\
+set from	= \"$my_email_personal\";\
+set signature	= ~/.mutt/signature.$my_base_personal;\
+"
+
+# XXX TODO this doesn't cooperate with gmail but where do we
+# put it? this is designed to be sourced before gmail; perhaps
+# we should have a hooks and a per-account hooks e.g.
+# account-hook would set this
+#
+#fcc-hook	.		"=fcc/%O"

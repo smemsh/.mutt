@@ -1,0 +1,143 @@
+#
+# scott@smemsh.net
+# http://smemsh.net/src/.mutt/rc
+# http://spdx.org/licenses/GPL-2.0.html
+
+source ~/.mutt/crypt/myvars
+source ~/.mutt/myvars
+
+source $my_cryptroot/alternates
+
+ignore		*
+unignore	x-mailer: from date subject to cc
+hdr_order	From From: Subject:
+auto_view	text/html
+
+#
+# XXX really no leading whitespace allowed? :-(
+#
+
+# make sure we always view text/plain if there is
+# multipart/alternative
+#
+# XXX TODO make a file that uses text/html with sender-hooks
+# that need it
+#
+unalternative_order *
+alternative_order \
+text/plain
+
+set noascii_chars
+set autoedit
+set nobeep
+set noconfirmappend
+set copy
+set fast_reply
+set fcc_attach
+set save_name
+set force_name
+set nohelp
+set nomark_old
+set thorough_search
+set tilde
+set use_domain
+set honor_followup_to
+set followup_to
+set nometoo
+
+# we like fast folder changes and tend to know what we are
+# doing and have already done, so no messages will be
+# necessary
+#
+set sleep_time	= 0
+set time_inc	= 3
+
+# be careful with these settings, `0' does NOT disable, it
+# enables every main loop! (which means, effectively, every
+# keypress!) This should be set differently for IMAP, for
+# example.
+#
+set mail_check	= 0
+set timeout	= 0
+
+# change `from' using `folder-hook' or `send-hook', etc, or the
+# V, M, O binds
+#
+set use_from
+set from	= "" # default blank otherwise so it has to
+		     # be filled at creation time
+
+# TODO local indexing --smm20141030
+#
+# even maildir is sped by keeping them cached in a single file
+#
+#set header_cache	= $my_cachedir/headers/
+#set message_cachedir	= $my_cachedir/bodies/
+#set message_cache_clean	= no
+
+# Postfix uses the envelope sender to determine which from
+# `sasl_auth_map' to use.  We have to use the correct login
+# because if it's different than the body's internal `from'
+# address, Gmail rewrites return-path to be the canonical
+# login account, which causes a mismatch and we get flagged
+# as spam at a lot of places.  Mutt will set the envelope
+# sender if told to, and if the address isn't specified, it
+# will be taken from the `from' header internal to the
+# message.  Note that the problem now becomes how to track
+# sent mail items from the account they didn't go through,
+# because these are not forwarded; only incoming mail is.
+#
+set use_envelope_from
+set envelope_from_address
+
+set folder			= $my_maildir/
+set mbox			= $my_maildir/spool
+set spoolfile			= $my_maildir/spool
+set postponed			= $my_maildir/postponed
+
+set tmpdir			= $my_muttdata/edit
+
+set abort_nosubject		= yes
+set delete			= yes
+set include			= yes
+set mime_forward		= ask-no
+set move			= no
+set pipe_decode			= yes
+set quit			= yes
+set recall			= no
+set wait_key			= no
+
+set ssl_starttls		= yes
+set ssl_use_sslv3		= yes
+set ssl_use_tlsv1		= yes
+set use_ipv6			= no
+set certificate_file		= $my_muttcrypt/certificates
+set history_file		= $my_muttdata/history
+
+set attribution			= "%F on %{%Y/%m/%d %Z @%H:%M:%S}:"
+set date_format			= "!%a %Y%m%d%H%M%S %Z"
+set display_filter		= "sed -f $my_muttroot/display_filter.sed"
+set dsn_return			= full
+set mbox_type			= Maildir
+#set query_command		= "mutt_ldap_query '%s'"
+set status_chars		= -+XA
+
+#set folder_format		= "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
+set folder_format		= "%2C %t %N %d %f"
+set pager_format		= "-%S- %C/%m: %f :: %s"
+set status_format		= " %f [%r] %lB %mm %nn %pp"
+
+set wrap			= 80 # artificial boundary for text/flowed
+
+# TODO do we need both these lines? any reason to source it?
+#
+set alias_file			= $my_muttcrypt/aliases
+source $alias_file
+
+# index_format done in myvars/hooks/macros
+
+source $my_muttroot/binds
+source $my_muttroot/macros
+source $my_muttroot/hooks
+source $my_muttroot/colors
+source $my_muttroot/mailboxes

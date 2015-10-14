@@ -1,0 +1,9 @@
+#
+# scott@smemsh.net
+# http://smemsh.net/src/.mutt/mailboxes
+# http://spdx.org/licenses/GPL-2.0.html
+#
+##############################################################################
+
+unmailboxes *
+mailboxes `$my_muttroot/enumerate-mailboxes.sh $my_maildir`
