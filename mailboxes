@@ -6,4 +6,9 @@
 ##############################################################################
 
 unmailboxes *
-mailboxes `$my_muttroot/enumerate-mailboxes.sh $my_maildir`
+
+# mutt does not expand variables within backticks, and we have
+# to pass an arg (the maildir root), so we have to use this
+# not-so-elegant, but useful workaround
+#
+source "$my_muttroot/enumerate-mailboxes.sh $my_maildir |"

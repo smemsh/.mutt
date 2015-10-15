@@ -1,14 +1,15 @@
 #!/bin/bash
 #
 # enumerate-mailboxes.sh
-#   script to enumerate maildirs for mutt :mailboxes directive
+#   produces a mutt 'mailboxes' directive with all maildirs below given path
 #
 # - takes a maildir tree root as arg1
-# - tries to enumerate all maildirs in the hierarchy below
-# - prints them on stdout, space delimited
-# - suitable for eg mutt :maildir `enumerate-mailboxes.sh`
+# - enumerates all maildirs in the hierarchy below
+# - prints on stdout, space delimited, prefixed with 'mailboxes'
+# - suitable for mutt ala ':source "eunmerate-mailboxes.sh $my_maildirs |"'
 # - todo: algorithm should check for all 3 cur+new+tmp then take parent
 # - note: no plans to handle spaces in paths
+# - note: implemented as :source because mutt does not interpolate in backticks
 # - status: production
 #
 # scott@smemsh.net
@@ -18,13 +19,16 @@
 
 main ()
 {
-	find $1 \
-	-mindepth 1 \
-	-type d \
-	-regextype posix-extended \
-	-not -regex '.*/(cur|new|tmp)$' \
-	-printf '%p ' \
-	;
+	maildirs=($(
+		find $1 \
+		-mindepth 1 \
+		-type d \
+		-regextype posix-extended \
+		-not -regex '.*/(cur|new|tmp)$' \
+		-printf '%p ' \
+		;
+	))
+	echo "mailboxes ${maildirs[*]}"
 }
 
 main "$@"
