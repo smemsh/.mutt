@@ -5,12 +5,12 @@
 #
 ##############################################################################
 
-macro index	p	c=\r
-macro pager	p	c=\r
-macro index	P	s=\r
-macro pager	P	s=\r
+macro index	p	c=spool\r
+macro pager	p	c=spool\r
 macro index	C	c=spool\r
 macro pager	C	c=spool\r
+macro index	P	s=spool\r
+macro pager	P	s=spool\r
 macro index	*	"s=saved/\r"
 macro pager	*	"s=saved/\r"
 
