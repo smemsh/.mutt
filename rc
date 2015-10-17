@@ -112,7 +112,7 @@ set history_file		= $my_muttdata/history
 
 set attribution			= "%F on %{%Y/%m/%d %Z @%H:%M:%S}:"
 set date_format			= "!%a %Y%m%d%H%M%S %Z"
-set display_filter		= "sed -f $my_cryptroot/display_filter.sed"
+set display_filter		= "sed -f $my_muttroot/display_filter.sed"
 set dsn_return			= full
 set mbox_type			= Maildir
 #set query_command		= "mutt_ldap_query '%s'"
