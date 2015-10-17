@@ -14,8 +14,8 @@ macro pager	C	c=spool\r
 macro index	*	"s=saved/\r"
 macro pager	*	"s=saved/\r"
 
-macro index	S	":source ~/.mutt/rc\r"
-macro index	e	"!cd ~/.mutt; vim rc\r"
+macro index	S	":source $my_muttroot/rc\r"
+macro index	e	"!cd $my_muttroot; vim rc\r"
 macro index	D	"!zless /usr/share/doc/mutt*/manual.txt.gz\r"
 macro index	M	"!fetchmail | fml.awk\r"
 
