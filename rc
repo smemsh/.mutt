@@ -13,10 +13,6 @@ unignore	x-mailer: from date subject to cc
 hdr_order	From From: Subject:
 auto_view	text/html
 
-#
-# XXX really no leading whitespace allowed? :-(
-#
-
 # make sure we always view text/plain if there is
 # multipart/alternative
 #
