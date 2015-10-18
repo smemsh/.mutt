@@ -26,7 +26,7 @@ macro pager	>	":set index_format=\"$my_index_normal\"\r"
 
 macro pager	i	":set pager_index_lines=10\r"
 macro pager	I	":set pager_index_lines=0\r"
-macro pager	U	|urlview\r
+macro pager	U	|urlscan\r
 
 macro pager	M	":toggle markers\r"
 macro pager	z	":set wrap=0\r"
