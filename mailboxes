@@ -12,3 +12,9 @@ unmailboxes *
 # not-so-elegant, but useful workaround
 #
 source "$my_muttroot/enumerate-mailboxes.sh $my_maildir |"
+
+# new messages meaningless in these collections
+#
+unmailboxes $my_maildir/saved
+unmailboxes $my_maildir/trash
+unmailboxes $my_maildir/spam
