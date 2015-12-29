@@ -16,7 +16,8 @@ macro pager	*	"s=saved/\r"
 
 macro index	S	":source $my_muttroot/rc\r"
 macro index	e	"!cd $my_muttroot; vim rc\r"
-macro index	D	"!zless /usr/share/doc/mutt*/manual.txt.gz\r"
+macro index	\Cd	"!zless /usr/share/doc/mutt*/manual.txt.gz\r"
+macro pager	\Cd	"!zless /usr/share/doc/mutt*/manual.txt.gz\r"
 macro index	M	"!mbsync -a\r"
 
 macro index	<	":set index_format=\"$my_index_subject\"\r"

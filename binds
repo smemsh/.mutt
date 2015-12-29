@@ -13,8 +13,10 @@ bind index	r	list-reply
 bind index	\#	tag-entry
 bind index	\et	collapse-thread
 bind index	\ev	tag-thread
-bind index	X	delete-thread
 bind index	E	edit
+
+bind index	D	delete-thread
+bind pager	D	delete-thread
 
 bind pager	j	next-line
 bind pager	k	previous-line
