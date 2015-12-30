@@ -5,39 +5,39 @@
 #
 ##############################################################################
 
-macro index	p	c=spool\r
-macro pager	p	c=spool\r
-macro index	C	c=spool\r
-macro pager	C	c=spool\r
-macro index	P	s=spool\r
-macro pager	P	s=spool\r
-macro index	*	"s=saved/\r"
-macro pager	*	"s=saved/\r"
+macro index     p       c=spool\r
+macro pager     p       c=spool\r
+macro index     C       c=spool\r
+macro pager     C       c=spool\r
+macro index     P       s=spool\r
+macro pager     P       s=spool\r
+macro index     *       "s=saved/\r"
+macro pager     *       "s=saved/\r"
 
-macro index	S	":source $my_muttroot/rc\r"
-macro index	e	"!cd $my_muttroot; vim rc\r"
-macro index	\Cd	"!zless /usr/share/doc/mutt*/manual.txt.gz\r"
-macro pager	\Cd	"!zless /usr/share/doc/mutt*/manual.txt.gz\r"
-macro index	M	"!mbsync -a\r"
+macro index     S       ":source $my_muttroot/rc\r"
+macro index     e       "!cd $my_muttroot; vim rc\r"
+macro index     \Cd     "!zless /usr/share/doc/mutt*/manual.txt.gz\r"
+macro pager     \Cd     "!zless /usr/share/doc/mutt*/manual.txt.gz\r"
+macro index     M       "!mbsync -a\r"
 
-macro index	<	":set index_format=\"$my_index_subject\"\r"
-macro index	>	":set index_format=\"$my_index_normal\"\r"
-macro pager	<	":set index_format=\"$my_index_subject\"\r"
-macro pager	>	":set index_format=\"$my_index_normal\"\r"
+macro index     <       ":set index_format=\"$my_index_subject\"\r"
+macro index     >       ":set index_format=\"$my_index_normal\"\r"
+macro pager     <       ":set index_format=\"$my_index_subject\"\r"
+macro pager     >       ":set index_format=\"$my_index_normal\"\r"
 
-macro pager	i	":set pager_index_lines=10\r"
-macro pager	I	":set pager_index_lines=0\r"
-macro pager	U	|urlscan\r
+macro pager     i       ":set pager_index_lines=10\r"
+macro pager     I       ":set pager_index_lines=0\r"
+macro pager     U       |urlscan\r
 
-macro pager	M	":toggle markers\r"
-macro pager	z	":set wrap=0\r"
-macro pager	Z	":set wrap=80\r"
+macro pager     M       ":toggle markers\r"
+macro pager     z       ":set wrap=0\r"
+macro pager     Z       ":set wrap=80\r"
 
-macro compose	M \
+macro compose   M \
 "<edit-from>"\
 "<kill-line>"\
 "$my_name_work"\
 "\<$my_addr_work\>"\
 "\r"
 
-#macro index	/	
+#macro index    /       

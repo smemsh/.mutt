@@ -4,24 +4,24 @@
 # http://smemsh.net/src/.mutt/colors
 # http://spdx.org/licenses/GPL-2.0.html
 
-color attachment	brightgreen	black
-color body		brightgreen	black	regexp
-color bold		brightyellow	black
-color error		brightred	black
-color header		brightred	black	regexp
-color hdrdefault	brightwhite	black
-color indicator		brightyellow	black
-color index		white		black	$my_domain_work
-color markers		brightcyan	black
-color message		brightgreen	black
-color normal		white		black
-color quoted		cyan		black
-color quoted1		green		black
-color quoted2		magenta		black
-color quoted3		brightgreen	black
-color search		brightwhite	magenta
-color signature		brightcyan	black
-color status		brightgreen	blue
-color tilde		brightcyan	black
-color tree		brightgreen	black
-color underline		black		white
+color attachment        brightgreen     black
+color body              brightgreen     black   regexp
+color bold              brightyellow    black
+color error             brightred       black
+color header            brightred       black   regexp
+color hdrdefault        brightwhite     black
+color indicator         brightyellow    black
+color index             white           black   $my_domain_work
+color markers           brightcyan      black
+color message           brightgreen     black
+color normal            white           black
+color quoted            cyan            black
+color quoted1           green           black
+color quoted2           magenta         black
+color quoted3           brightgreen     black
+color search            brightwhite     magenta
+color signature         brightcyan      black
+color status            brightgreen     blue
+color tilde             brightcyan      black
+color tree              brightgreen     black
+color underline         black           white

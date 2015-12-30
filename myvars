@@ -3,14 +3,14 @@
 # http://smemsh.net/src/.mutt/myvars
 # http://spdx.org/licenses/GPL-2.0.html
 
-set my_maildir		= ~/var/mail/$my_base_work
-set my_muttdata		= ~/var/mutt
-set my_cachedir		= ~/var/cache/mutt
+set my_maildir          = ~/var/mail/$my_base_work
+set my_muttdata         = ~/var/mutt
+set my_cachedir         = ~/var/cache/mutt
 
 # TODO: why this indirection? it's used only in 'hooks' now
 #
-set my_sent		= =sent/
+set my_sent             = =sent/
 
-set my_index_normal	= "%4C %d %1Z %-12.12a %4c %2M %s"
-set my_index_sent	= "%4C %d %1Z %-12.12t %4c %2M %s"
-set my_index_subject	= "%4C %1Z %s"
+set my_index_normal     = "%4C %d %1Z %-12.12a %4c %2M %s"
+set my_index_sent       = "%4C %d %1Z %-12.12t %4c %2M %s"
+set my_index_subject    = "%4C %1Z %s"

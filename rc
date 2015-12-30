@@ -12,10 +12,10 @@ source $my_cryptroot/alternates
 
 ###
 
-ignore		*
-unignore	x-mailer: from date subject to cc
-hdr_order	From From: Subject:
-auto_view	text/html
+ignore      *
+unignore    x-mailer: from date subject to cc
+hdr_order   From From: Subject:
+auto_view   text/html
 
 # make sure we always view text/plain if there is
 # multipart/alternative
@@ -49,31 +49,31 @@ set nometoo
 # doing and have already done, so no messages will be
 # necessary
 #
-set sleep_time	= 0
-set time_inc	= 3
+set sleep_time  = 0
+set time_inc    = 3
 
 # be careful with these settings, `0' does NOT disable, it
 # enables every main loop! (which means, effectively, every
 # keypress!) This should be set differently for IMAP, for
 # example.
 #
-set mail_check	= 0
-set timeout	= 0
+set mail_check  = 0
+set timeout     = 0
 
 # change `from' using `folder-hook' or `send-hook', etc, or the
 # V, M, O binds
 #
 set use_from
-set from	= "" # default blank otherwise so it has to
-		     # be filled at creation time
+set from        = "" # default blank otherwise so it has to
+                     # be filled at creation time
 
 # TODO local indexing --smm20141030
 #
 # even maildir is sped by keeping them cached in a single file
 #
-#set header_cache	= $my_cachedir/headers/
-#set message_cachedir	= $my_cachedir/bodies/
-#set message_cache_clean	= no
+#set header_cache       = $my_cachedir/headers/
+#set message_cachedir   = $my_cachedir/bodies/
+#set message_cache_clean        = no
 
 # Postfix uses the envelope sender to determine which from
 # `sasl_auth_map' to use.  We have to use the correct login
@@ -90,48 +90,48 @@ set from	= "" # default blank otherwise so it has to
 set use_envelope_from
 set envelope_from_address
 
-set folder			= $my_maildir/
-set mbox			= $my_maildir/spool
-set spoolfile			= $my_maildir/spool
-set postponed			= $my_maildir/postponed
+set folder                  = $my_maildir/
+set mbox                    = $my_maildir/spool
+set spoolfile               = $my_maildir/spool
+set postponed               = $my_maildir/postponed
 
-set tmpdir			= $my_muttdata/edit
+set tmpdir                  = $my_muttdata/edit
 
-set abort_nosubject		= yes
-set delete			= yes
-set include			= yes
-set mime_forward		= ask-no
-set move			= no
-set pipe_decode			= yes
-set quit			= yes
-set recall			= no
-set wait_key			= no
+set abort_nosubject         = yes
+set delete                  = yes
+set include                 = yes
+set mime_forward            = ask-no
+set move                    = no
+set pipe_decode             = yes
+set quit                    = yes
+set recall                  = no
+set wait_key                = no
 
-set ssl_starttls		= yes
-set ssl_use_sslv3		= yes
-set ssl_use_tlsv1		= yes
-set use_ipv6			= no
-set certificate_file		= $my_cryptroot/certificates
-set history_file		= $my_muttdata/history
+set ssl_starttls            = yes
+set ssl_use_sslv3           = yes
+set ssl_use_tlsv1           = yes
+set use_ipv6                = no
+set certificate_file        = $my_cryptroot/certificates
+set history_file            = $my_muttdata/history
 
-set attribution			= "%F on %{%Y/%m/%d %Z @%H:%M:%S}:"
-set date_format			= "!%a %Y%m%d%H%M%S %Z"
-set display_filter		= "sed -f $my_muttroot/display_filter.sed"
-set dsn_return			= full
-set mbox_type			= Maildir
-#set query_command		= "mutt_ldap_query '%s'"
-set status_chars		= -+XA
+set attribution             = "%F on %{%Y/%m/%d %Z @%H:%M:%S}:"
+set date_format             = "!%a %Y%m%d%H%M%S %Z"
+set display_filter          = "sed -f $my_muttroot/display_filter.sed"
+set dsn_return              = full
+set mbox_type               = Maildir
+#set query_command          = "mutt_ldap_query '%s'"
+set status_chars            = -+XA
 
-#set folder_format		= "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
-set folder_format		= "%2C %t %N %d %f"
-set pager_format		= "-%S- %C/%m: %f :: %s"
-set status_format		= " %f [%r] %lB %mm %nn %pp"
+#set folder_format          = "%2C %t %N %F %2l %-8.8u %-8.8g %8s %d %f"
+set folder_format           = "%2C %t %N %d %f"
+set pager_format            = "-%S- %C/%m: %f :: %s"
+set status_format           = " %f [%r] %lB %mm %nn %pp"
 
-set wrap			= 80 # artificial boundary for text/flowed
+set wrap                    = 80 # artificial boundary for text/flowed
 
 # TODO do we need both these lines? any reason to source it?
 #
-set alias_file			= $my_cryptroot/aliases
+set alias_file              = $my_cryptroot/aliases
 source $alias_file
 
 # index_format done in myvars/hooks/macros

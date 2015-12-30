@@ -4,28 +4,28 @@
 # http://smemsh.net/src/.mutt/binds
 # http://spdx.org/licenses/GPL-2.0.html
 
-bind index	\Cp	print-message
-bind index	d	delete-message
-bind index	\Cr	reply
-bind index	\Cb	bounce-message
-bind index	G	last-entry
-bind index	r	list-reply
-bind index	\#	tag-entry
-bind index	\et	collapse-thread
-bind index	\ev	tag-thread
-bind index	E	edit
+bind index      \Cp     print-message
+bind index      d       delete-message
+bind index      \Cr     reply
+bind index      \Cb     bounce-message
+bind index      G       last-entry
+bind index      r       list-reply
+bind index      \#      tag-entry
+bind index      \et     collapse-thread
+bind index      \ev     tag-thread
+bind index      E       edit
 
-bind index	D	delete-thread
-bind pager	D	delete-thread
+bind index      D       delete-thread
+bind pager      D       delete-thread
 
-bind pager	j	next-line
-bind pager	k	previous-line
-bind pager	\Cr	reply
-bind pager	r	list-reply
+bind pager      j       next-line
+bind pager      k       previous-line
+bind pager      \Cr     reply
+bind pager      r       list-reply
 
 # bound to macros later
 #
-bind index	l	noop
-bind index	L	noop
-bind index	p	noop
-bind index	P	noop
+bind index      l       noop
+bind index      L       noop
+bind index      p       noop
+bind index      P       noop
