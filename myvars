@@ -4,10 +4,6 @@
 # http://spdx.org/licenses/GPL-2.0.html
 
 set my_maildir		= ~/var/mail/$my_base_work
-
-set my_muttroot		= ~/.mutt
-set my_cryptroot	= $my_muttroot/crypt
-
 set my_muttdata		= ~/var/mutt
 set my_cachedir		= ~/var/cache/mutt
 

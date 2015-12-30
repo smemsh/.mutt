@@ -3,10 +3,14 @@
 # http://smemsh.net/src/.mutt/rc
 # http://spdx.org/licenses/GPL-2.0.html
 
-source ~/.mutt/crypt/myvars
-source ~/.mutt/myvars
+set my_muttroot     = ~/.mutt
+set my_cryptroot    = $my_muttroot/crypt
 
+source $my_muttroot/crypt/myvars
+source $my_muttroot/myvars
 source $my_cryptroot/alternates
+
+###
 
 ignore		*
 unignore	x-mailer: from date subject to cc
