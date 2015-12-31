@@ -3,7 +3,9 @@
 # http://smemsh.net/src/.mutt/myvars
 # http://spdx.org/licenses/GPL-2.0.html
 
-set my_maildir          = ~/var/mail/$my_base_work
+set my_mailroot         = ~/var/mail
+set my_maildir          = $my_mailroot/spool    # overriden by crypt/myvars
+
 set my_muttdata         = ~/var/mutt
 set my_cachedir         = ~/var/cache/mutt
 
