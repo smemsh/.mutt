@@ -35,48 +35,6 @@ folder-hook     .                       "set index_format = \"$my_index_normal\"
 folder-hook     sent                    "set index_format = \"$my_index_sent\""
 folder-hook     $my_maildir/postponed   "set index_format = \"$my_index_sent\""
 
-folder-hook . \
-	"set from       = \"$my_email_personal\";"\
-	"set signature  = $my_muttroot/signature.$my_base_personal;"\
-
-folder-hook $my_base_work \
-	"set from       = \"$my_email_work\";"\
-	"set signature  = $my_muttroot/signature.$my_base_work;"\
-
-folder-hook $my_base_private \
-	"set from       = \"$my_email_private\";"\
-	"set signature  = $my_muttroot/signature.$my_base_personal;"\
-
-##############################################################################
-
-# default is to work
-#
-reply-hook      "~A" "\
-set from        = \"$my_email_work\";\
-set signature   = $my_muttroot/signature.$my_base_work;\
-"
-
-# work
-#
-reply-hook      "~t $my_domain_work" "\
-set from        = \"$my_email_work\";\
-set signature   = $my_muttroot/signature.$my_base_work;\
-"
-
-# private
-#
-reply-hook      "~t $my_addr_private" "\
-set from        = \"$my_email_private\";\
-set signature   = $my_muttroot/signature.$my_base_personal;\
-"
-
-# personal
-#
-reply-hook      "~t $my_addr_personal" "\
-set from        = \"$my_email_personal\";\
-set signature   = $my_muttroot/signature.$my_base_personal;\
-"
-
 # XXX TODO this doesn't cooperate with gmail but where do we
 # put it? this is designed to be sourced before gmail; perhaps
 # we should have a hooks and a per-account hooks e.g.

@@ -135,7 +135,16 @@ source "$my_muttroot/exists-or-null.sh $alias_file |"
 # index_format done in myvars/hooks/macros
 
 source $my_muttroot/binds
+source "$my_muttroot/exists-or-null.sh $my_cryptroot/binds |"
+
 source $my_muttroot/macros
+source "$my_muttroot/exists-or-null.sh $my_cryptroot/macros |"
+
 source $my_muttroot/hooks
+source "$my_muttroot/exists-or-null.sh $my_cryptroot/hooks |"
+
 source $my_muttroot/colors
+source "$my_muttroot/exists-or-null.sh $my_cryptroot/colors |"
+
 source $my_muttroot/mailboxes
+source "$my_muttroot/exists-or-null.sh $my_cryptroot/mailboxes |"

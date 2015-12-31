@@ -11,7 +11,6 @@ color error             brightred       black
 color header            brightred       black   regexp
 color hdrdefault        brightwhite     black
 color indicator         brightyellow    black
-color index             white           black   $my_domain_work
 color markers           brightcyan      black
 color message           brightgreen     black
 color normal            white           black

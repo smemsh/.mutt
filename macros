@@ -33,11 +33,4 @@ macro pager     M       ":toggle markers\r"
 macro pager     z       ":set wrap=0\r"
 macro pager     Z       ":set wrap=80\r"
 
-macro compose   M \
-"<edit-from>"\
-"<kill-line>"\
-"$my_name_work"\
-"\<$my_addr_work\>"\
-"\r"
-
 #macro index    /       
