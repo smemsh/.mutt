@@ -15,4 +15,4 @@ set my_sent             = =sent/
 
 set my_index_normal     = "%4C %d %1Z %-12.12a %4c %2M %s"
 set my_index_sent       = "%4C %d %1Z %-12.12t %4c %2M %s"
-set my_index_subject    = "%4C %1Z %s"
+set my_index_subject    = "%4C %1Z %2M %s"
