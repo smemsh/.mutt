@@ -2,6 +2,7 @@
 # scott@smemsh.net
 # http://smemsh.net/src/.mutt/rc
 # http://spdx.org/licenses/GPL-2.0.html
+#
 
 set my_muttroot = ~/.mutt
 source $my_muttroot/myvars
